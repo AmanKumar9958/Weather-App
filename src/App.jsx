@@ -44,13 +44,17 @@ const App = () => {
   return (
     <div 
       className="w-full min-h-screen bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white flex items-center justify-center flex-col gap-5 font-sans px-4 py-3">
+      {/* Floating Emojis */}
+      <div className="absolute text-5xl float-slow top-10 left-5">☁️</div>
+      <div className="absolute text-4xl float-fast top-[50%] right-6">🌧️</div>
+      <div className="absolute text-6xl float-medium bottom-10 left-[40%]">☀️</div>
       <div className="w-full max-w-md bg-white/10 backdrop-blur-lg rounded-3xl p-6 shadow-2xl border border-white/20">
         {/* <h2 className="text-2xl font-bold mb-4 text-center tracking-wide text-white">🌦️ Weather App</h2> */}
         {/* Search */}
         <div className="flex items-center justify-center gap-3 mb-4">
           <input
             type="text"
-            placeholder="Enter city name..."
+            placeholder="e.g. Delhi 🌇"
             className="flex-1 bg-white/20 text-white placeholder-gray-300 px-4 py-2 rounded-2xl outline-none border border-white/30 focus:ring-2 focus:ring-blue-400 transition-all"
             value={city}
             onChange={(e) => setCity(e.target.value)}
@@ -84,6 +88,10 @@ const App = () => {
         }
         <ForecastCard forecastData={forecast} />
       </div>
+      {/* Footer */}
+      <p className="text-center text-white/50 text-xs mt-6">
+        Made with ❤️ & ☁️ by Aman Kumar | Powered by OpenWeather 🌍
+      </p>
     </div>
   )
 }
